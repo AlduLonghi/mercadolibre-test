@@ -1,8 +1,36 @@
+$gris-oscuro: #333;
+$gris: #9999;
+
 nav {
   display: flex;
+  max-width: 1200px;
+  margin: auto;
 }
 
-input {
+form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+
+  input {
     height: 100%;
-    padding: 0;
+    width: 95%;
+    border: none;
+    border-radius: 1px 0 0 1px;
+    padding: 0 1rem;
+    font-size: 18px;
+    color: $gris-oscuro;
+
+    :focus {
+      outline: 0;
+    }
+  }
+
+  button {
+    height: 100%;
+    width: 5%;
+    border: none;
+    border-radius: 0 1px 1px 0;
+  }
 }
