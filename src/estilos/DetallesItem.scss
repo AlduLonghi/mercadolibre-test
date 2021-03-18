@@ -1,4 +1,18 @@
 .detallesItem-container {
   width: 100%;
   background-color: white;
+  padding: 32px;
+}
+
+.detalles-inner-top {
+  display: flex;
+
+  img {
+    width: 680px;
+    height: 680px;
+  }
+
+  div {
+    width: 280px;
+  }
 }

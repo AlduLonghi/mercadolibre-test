@@ -1,14 +1,15 @@
 import Logo from '../assets/Logo_ML.png';
+import '../estilos/DetallesItem.scss';
 
 const DetallesItem = () => (
   <div className="detallesItem-container">
     <div>
-      <div>
+      <div className="detalles-inner-top">
         <img src={Logo} alt="Imagen producto" />
         <div>
-          <p>Nuevo - 234 vendidos</p>
-          <h2>deco reverse sombrero oxford</h2>
-          <h1>$1.980</h1>
+          <p className="estado">Nuevo - 234 vendidos</p>
+          <h1>deco reverse sombrero oxford</h1>
+          <p className="detalles-precio">$1.980</p>
           <button type="button">comprar</button>
         </div>
       </div>
