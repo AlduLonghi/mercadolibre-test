@@ -8,13 +8,13 @@ const DetallesItem = () => (
         <img src={Logo} alt="Imagen producto" />
         <div>
           <p className="estado">Nuevo - 234 vendidos</p>
-          <h1>deco reverse sombrero oxford</h1>
-          <p className="detalles-precio">$1.980</p>
-          <button type="button">comprar</button>
+          <h2>deco reverse sombrero oxford</h2>
+          <h1 className="detalles-precio">$1.980</h1>
+          <button type="button" className="comprar-btn">comprar</button>
         </div>
       </div>
-      <div>
-        <h3>descripción del producto</h3>
+      <div className="detalles-inner-bottom">
+        <h3>Descripción del producto</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit,
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
