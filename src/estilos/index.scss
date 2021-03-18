@@ -8,6 +8,14 @@ input {
   outline: 0;
 }
 
+a {
+  color: inherit;
+
+  :focus {
+    text-decoration: none;
+  }
+}
+
 body {
   margin: 0;
   font-family:

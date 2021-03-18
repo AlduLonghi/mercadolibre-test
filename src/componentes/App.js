@@ -10,6 +10,7 @@ function App() {
       </header>
       <main>
         <ItemLink />
+        <ItemLink />
       </main>
     </>
   );
