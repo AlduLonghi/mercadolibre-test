@@ -1,0 +1,48 @@
+$gris-oscuro: #333;
+$gris: #666;
+
+.itemLink-container {
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  background-color: white;
+  color: $gris-oscuro;
+
+  img {
+    width: 180px;
+    height: 180px;
+    border-radius: 4px;
+  }
+}
+
+.itemlink-detalles {
+  display: flex;
+  width: 80%;
+  margin-top: 1rem;
+  margin-left: 1rem;
+
+  :first-child {
+    width: 85%;
+  }
+
+  div:nth-child(2) {
+    width: 15%;
+  }
+}
+
+.precio {
+  width: 85%;
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.descripcion {
+  width: 85%;
+  font-size: 18px;
+}
+
+.locacion {
+  color: $gris;
+  margin-top: 18px;
+  font-size: 12px;
+}
