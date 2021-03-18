@@ -1,4 +1,4 @@
-const Header = () => {
+const Navbar = () => {
     return ( 
       <header>
           <nav>
@@ -12,4 +12,4 @@ const Header = () => {
     );
 }
  
-export default Header;
+export default Navbar;
