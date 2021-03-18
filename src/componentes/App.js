@@ -1,5 +1,5 @@
 import '../estilos/App.scss';
-import DetallesItem from '../vistas/DetallesItem';
+import Resultados from '../vistas/Resultados';
 import Navbar from './Navbar';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
         <Navbar />
       </header>
       <main>
-        <DetallesItem />
+        <Resultados />
       </main>
     </>
   );
