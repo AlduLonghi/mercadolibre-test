@@ -1,22 +1,23 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ItemLink from '../componentes/ItemLink';
 import '../estilos/Resultados.scss';
+
+async function fetchApi() {
+  const request = await axios.get('https://api.mercadolibre.com/sites/MLA/search?q=celular&limit=4', {});
+  return request;
+}
 
 const Resultados = () => {
   const [resultados, setResultados] = useState();
 
-  async function fetchApi() {
-    const request = await axios.get('https://api.mercadolibre.com/sites/MLA/search?q=celular&limit=4', {})
-      .then(res => setResultados(res.data.results));
-    return request;
-  }
-
-  fetchApi();
+  useEffect(() => {
+    fetchApi().then(res => setResultados(res.data.results));
+  }, []);
 
   return (
     <div className="itemLinks-container">
-      {resultados.forEach(res => <ItemLink itemInfo={res} />)}
+      {resultados && resultados.map(res => <ItemLink key={res.id} itemInfo={res} />)}
     </div>
   );
 };

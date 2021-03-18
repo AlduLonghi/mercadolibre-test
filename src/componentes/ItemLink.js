@@ -1,12 +1,12 @@
-import Logo from '../assets/Logo_ML.png';
+import PropTypes from 'prop-types';
 import '../estilos/ItemLink.scss';
 
 const ItemLink = ({ itemInfo }) => (
   <div className="itemLink-container">
-    <img src={Logo} alt="Item thumbnail" />
+    <img src={itemInfo.thumbnail} alt="Item thumbnail" />
     <div className="itemlink-detalles">
       <div>
-        <p className="precio">{itemInfo.price}</p>
+        <p className="precio">{`$${itemInfo.price.toLocaleString('es-ES')}`}</p>
         <p className="descripcion">{itemInfo.title}</p>
       </div>
       <div>
@@ -15,5 +15,9 @@ const ItemLink = ({ itemInfo }) => (
     </div>
   </div>
 );
+
+ItemLink.propTypes = {
+  itemInfo: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default ItemLink;
