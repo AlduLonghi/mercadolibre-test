@@ -1,5 +1,5 @@
 import '../estilos/App.scss';
-import ItemLink from './ItemLink';
+import Resultados from '../vistas/Resultados';
 import Navbar from './Navbar';
 
 function App() {
@@ -9,8 +9,7 @@ function App() {
         <Navbar />
       </header>
       <main>
-        <ItemLink />
-        <ItemLink />
+        <Resultados />
       </main>
     </>
   );
