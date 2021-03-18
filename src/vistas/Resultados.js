@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import ItemLink from '../componentes/ItemLink';
 import '../estilos/Resultados.scss';
 import fetchQueryResults from '../helpers/api';
-
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+import useQuery from '../helpers/url';
 
 const Resultados = () => {
   const [resultados, setResultados] = useState();
