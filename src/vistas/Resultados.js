@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import ItemLink from '../componentes/ItemLink';
 import '../estilos/Resultados.scss';
 import fetchQueryResults from '../helpers/api';
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 const Resultados = () => {
   const [resultados, setResultados] = useState();
-  const { query } = useParams();
+  const query = useQuery();
 
   useEffect(() => {
-    fetchQueryResults(query).then(res => setResultados(res.data.results));
+    fetchQueryResults(query.get('q')).then(res => setResultados(res.data.results));
   }, []);
 
   let toRenderComponent;

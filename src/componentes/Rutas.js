@@ -8,7 +8,7 @@ const Rutas = () => (
     <Route exact path="/">
       <Home />
     </Route>
-    <Route path="/items/search=:query">
+    <Route path="/items">
       <Resultados />
     </Route>
     <Route exact path="/item/:id">
