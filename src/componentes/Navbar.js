@@ -1,14 +1,12 @@
 const Navbar = () => {
     return ( 
-      <header>
           <nav>
-             <img/>
-             <div>
+             <img src=""/>
+             <form>
                <input/>
                <button></button>
-             </div>
+             </form>
           </nav>
-      </header>
     );
 }
  
