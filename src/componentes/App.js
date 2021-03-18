@@ -1,6 +1,6 @@
 import '../estilos/App.scss';
-import Resultados from '../vistas/Resultados';
 import Navbar from './Navbar';
+import Rutas from './Rutas';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <Navbar />
       </header>
       <main>
-        <Resultados />
+        <Rutas />
       </main>
     </>
   );
