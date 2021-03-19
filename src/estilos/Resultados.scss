@@ -5,7 +5,11 @@ $gris-claro: #eee;
   background-color: white;
   padding: 0 1rem;
 
-  .itemLink-container:not(:last-child) {
+  .item-link {
+    display: block;
+  }
+
+  .item-link:not(:last-child) {
     border-bottom: 2px solid $gris-claro;
   }
 }
