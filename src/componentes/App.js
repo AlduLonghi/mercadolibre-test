@@ -1,4 +1,5 @@
-import { useState, useHistory } from 'react';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import '../estilos/App.scss';
 import Navbar from './Navbar';
 import Rutas from './Rutas';
@@ -12,19 +13,19 @@ const App = () => {
   };
 
   const handleCLick = () => {
-    history.push(`/items?q=${query}`)
-  }
+    history.push(`/items?q=${query}`);
+  };
 
   return (
     <>
       <header>
-        <Navbar />
+        <Navbar onClick={handleCLick} onChange={handleChange} />
       </header>
       <main>
         <Rutas />
       </main>
     </>
   );
-}
+};
 
 export default App;
