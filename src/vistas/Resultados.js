@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ItemLink from '../componentes/ItemLink';
 import '../estilos/Resultados.scss';
-import fetchQueryResults from '../helpers/api';
+import { fetchQueryResults } from '../helpers/api';
 import useQuery from '../helpers/url';
 
 const Resultados = () => {
