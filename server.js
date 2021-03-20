@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const items = require('./routes/items');
+const items = require('./rutas/items');
 
 app.use("/api/items", items);
 

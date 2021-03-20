@@ -7,6 +7,7 @@ exports.busquedaController = async (req, res) => {
     .then(res => res.data)
     .then(res => {
       let categories = [];
+      console.log(res);
 
       if (res.filters[0] !== undefined) {
         categories = res.filters[0].values[0].path_from_root

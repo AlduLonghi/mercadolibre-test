@@ -8,7 +8,7 @@ $gris: #666;
   background-color: white;
   color: $gris-oscuro;
 
-  img {
+  .item-link-logo {
     width: 180px;
     height: 180px;
     border-radius: 4px;
@@ -21,7 +21,7 @@ $gris: #666;
   margin-top: 1rem;
   margin-left: 1rem;
 
-  :first-child {
+  div:first-child {
     width: 85%;
   }
 
@@ -31,7 +31,6 @@ $gris: #666;
 }
 
 .precio {
-  width: 85%;
   font-size: 24px;
   margin-bottom: 32px;
 }
@@ -41,7 +40,7 @@ $gris: #666;
   font-size: 18px;
 }
 
-.locacion {
+.condicion {
   color: $gris;
   margin-top: 18px;
   font-size: 12px;

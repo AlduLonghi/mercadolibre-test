@@ -13,7 +13,7 @@ const App = () => {
   };
 
   const handleCLick = () => {
-    history.push(`/items?q=${query}`);
+    history.push(`/items?search=${query}`);
   };
 
   return (
