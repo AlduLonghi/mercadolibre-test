@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ReactLoading from 'react-loading';
 import Breadcrumb from '../componentes/Breadcrumb';
 import '../estilos/DetallesItem.scss';
 
@@ -45,6 +46,12 @@ const DetallesItem = () => {
           </div>
         </div>
       </>
+    );
+  } else {
+    toRenderComponent = (
+      <div className="react-loading-cont">
+        <ReactLoading type="bars" color="#999" height="6px" width="60px" />
+      </div>
     );
   }
 

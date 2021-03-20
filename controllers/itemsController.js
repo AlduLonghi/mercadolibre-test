@@ -53,11 +53,13 @@ exports.detallesController = async (req, res) => {
       .catch(err => console.log(err));
 
     const descripcionItem = await axios.get(`https://api.mercadolibre.com/items/${id}/description`, {})
-    .then(res => res.data.plain_text);
+    .then(res => res.data.plain_text)
+    .catch(err => console.log(err));
 
     const categoryItem = await axios.get(`https://api.mercadolibre.com/categories/${detallesItem.category_id}`, {})
       .then(res => res.data)
-      .then(data => data.path_from_root.map(categoria => categoria.name));
+      .then(data => data.path_from_root.map(categoria => categoria.name))
+      .catch(err => console.log(err));
 
       const resObj = {
           author : {

@@ -1,6 +1,12 @@
+import '../estilos/Home.scss';
+
 const Home = () => (
-  <div>
-    Hello there!
+  <div className="home-text-cont">
+    <h1 className="home-text">
+      Hola!
+      <br />
+      ¿Qué estás buscando?
+    </h1>
   </div>
 );
 
