@@ -44,3 +44,38 @@ exports.busquedaController = async (req, res) => {
 
   res.json(items);
 };
+
+exports.detallesController = async (req, res) => {
+    const id = req.params.id;
+
+    const descripcionItem = await axios.get(`https://api.mercadolibre.com/items/${id}/description`, {})
+    .then(res => res.data)
+    .then(data => data.plain_text);
+
+    const detallesItem = await axios.get(`https://api.mercadolibre.com/items/${id}`, {})
+    .then(res => res.data)
+    .then(item => {
+        return {
+          author : {
+              name: 'Aldana',
+              lastname: 'Longhi',
+          },
+          item: {
+              id: item.id,
+              title: item.title,
+              price: {
+                  currency: item.currency_id,
+                  ammount: item.price,
+              },
+              picture: item.thumbnail,
+              condition: item.condition,
+              free_shipping: item.shipping.tags.find(el => el === 'mandatory_free_shipping') ? true : false,
+              sold_quantity: item.sold_quantity,
+              description: descripcionItem,
+          }
+        }
+    })
+    .catch(err => console.log(err));
+
+    res.json(detallesItem);
+};
