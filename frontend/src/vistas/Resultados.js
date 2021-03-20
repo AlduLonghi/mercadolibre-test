@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import ReactLoading from 'react-loading';
 import Breadcrumb from '../componentes/Breadcrumb';
 import ItemLink from '../componentes/ItemLink';
 import '../estilos/Resultados.scss';
@@ -34,7 +35,9 @@ const Resultados = () => {
     );
   } else {
     toRenderComponent = (
-      <div>Loading...</div>
+      <div className="react-loading-cont">
+        <ReactLoading type="bars" color="#999" height="6px" width="60px" />
+      </div>
     );
   }
 

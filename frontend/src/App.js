@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import '../estilos/App.scss';
-import Navbar from './Navbar';
-import Rutas from './Rutas';
+import './estilos/App.scss';
+import Navbar from './componentes/Navbar';
+import Rutas from './componentes/Rutas';
 
 const App = () => {
   const [query, setQuery] = useState();
