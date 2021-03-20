@@ -14,10 +14,10 @@ const Resultados = () => {
   useEffect(() => {
     setFetching(true);
     axios.get(`/api/items?q=${query.get('search')}`, {})
-    .then(res => {
-      setResultados(res.data.items);
-    })
-    .then(() => setFetching(false));
+      .then(res => {
+        setResultados(res.data.items);
+      })
+      .then(() => setFetching(false));
   }, [location]);
 
   let toRenderComponent;

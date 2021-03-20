@@ -1,8 +1,10 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../estilos/DetallesItem.scss';
 
 const DetallesItem = () => {
+  const [fetching, setFetching] = useState(true);
   const [itemData, setItemData] = useState();
   const { id } = useParams();
 
@@ -18,7 +20,7 @@ const DetallesItem = () => {
 
   let toRenderComponent;
 
-  if (itemData) {
+  if (!fetching) {
     const condicion = itemData.condition === 'new' ? 'Nuevo' : 'Usado';
     toRenderComponent = (
       <div className="detallesItem-container">
