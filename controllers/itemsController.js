@@ -3,11 +3,10 @@ const axios = require('axios');
 exports.busquedaController = async (req, res) => {
   const query = req.query.q;
 
-  const items = await axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=4`, {})
+  const itemsResult = await axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=4`, {})
     .then(res => res.data)
     .then(res => {
       let categories = [];
-      console.log(res);
 
       if (res.filters[0] !== undefined) {
         categories = res.filters[0].values[0].path_from_root
@@ -43,40 +42,44 @@ exports.busquedaController = async (req, res) => {
     })
     .catch(err => console.log(err));
 
-  res.json(items);
+  res.json(itemsResult);
 };
 
 exports.detallesController = async (req, res) => {
     const id = req.params.id;
 
-    const descripcionItem = await axios.get(`https://api.mercadolibre.com/items/${id}/description`, {})
-    .then(res => res.data)
-    .then(data => data.plain_text);
-
     const detallesItem = await axios.get(`https://api.mercadolibre.com/items/${id}`, {})
-    .then(res => res.data)
-    .then(item => {
-        return {
+      .then(res => res.data)
+      .catch(err => console.log(err));
+
+    const descripcionItem = await axios.get(`https://api.mercadolibre.com/items/${id}/description`, {})
+    .then(res => res.data.plain_text);
+
+    const categoryItem = await axios.get(`https://api.mercadolibre.com/categories/${detallesItem.category_id}`, {})
+      .then(res => res.data)
+      .then(data => data.path_from_root.map(categoria => categoria.name));
+
+      const resObj = {
           author : {
               name: 'Aldana',
               lastname: 'Longhi',
           },
           item: {
-              id: item.id,
-              title: item.title,
+              id: detallesItem.id,
+              title: detallesItem.title,
               price: {
-                  currency: item.currency_id,
-                  ammount: item.price,
+                  currency: detallesItem.currency_id,
+                  ammount: detallesItem.price,
               },
-              picture: item.thumbnail,
-              condition: item.condition,
-              free_shipping: item.shipping.tags.find(el => el === 'mandatory_free_shipping') ? true : false,
-              sold_quantity: item.sold_quantity,
+              picture: detallesItem.thumbnail,
+              condition: detallesItem.condition,
+              free_shipping: detallesItem.shipping.tags.find(el => el === 'mandatory_free_shipping') ? true : false,
+              sold_quantity: detallesItem.sold_quantity,
               description: descripcionItem,
+              categories: categoryItem,
           }
-        }
-    })
-    .catch(err => console.log(err));
+      }
+      console.log(resObj);
 
-    res.json(detallesItem);
+    res.json(resObj);
 };
