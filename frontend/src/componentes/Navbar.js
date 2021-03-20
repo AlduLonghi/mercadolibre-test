@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Logo from '../assets/Logo_ML.png';
 import SearchIcon from '../assets/ic_Search.png';
@@ -5,7 +6,7 @@ import '../estilos/Navbar.scss';
 
 const Navbar = ({ onClick, onChange }) => (
   <nav>
-    <img src={Logo} alt="Logo MercadoLibre" />
+    <Link to="/"><img src={Logo} alt="Logo MercadoLibre" /></Link>
     <form>
       <input
         type="text"

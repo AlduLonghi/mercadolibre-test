@@ -17,6 +17,14 @@ a {
   }
 }
 
+button {
+  outline: none;
+
+  :focus {
+    outline: none;
+  }
+}
+
 body {
   margin: 0;
   font-family:

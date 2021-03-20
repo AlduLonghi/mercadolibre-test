@@ -23,7 +23,6 @@ const DetallesItem = () => {
   let toRenderComponent;
 
   if (!fetching) {
-    console.log(itemData.categories);
     const condicion = itemData.condition === 'new' ? 'Nuevo' : 'Usado';
     toRenderComponent = (
       <>

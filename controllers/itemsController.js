@@ -46,42 +46,41 @@ exports.busquedaController = async (req, res) => {
 };
 
 exports.detallesController = async (req, res) => {
-    const id = req.params.id;
+  const { id } = req.params;
 
-    const detallesItem = await axios.get(`https://api.mercadolibre.com/items/${id}`, {})
-      .then(res => res.data)
-      .catch(err => console.log(err));
+  const detallesItem = await axios.get(`https://api.mercadolibre.com/items/${id}`, {})
+    .then(res => res.data)
+    .catch(err => console.log(err));
 
-    const descripcionItem = await axios.get(`https://api.mercadolibre.com/items/${id}/description`, {})
+  const descripcionItem = await axios.get(`https://api.mercadolibre.com/items/${id}/description`, {})
     .then(res => res.data.plain_text)
     .catch(err => console.log(err));
 
-    const categoryItem = await axios.get(`https://api.mercadolibre.com/categories/${detallesItem.category_id}`, {})
-      .then(res => res.data)
-      .then(data => data.path_from_root.map(categoria => categoria.name))
-      .catch(err => console.log(err));
+  const categoryItem = await axios.get(`https://api.mercadolibre.com/categories/${detallesItem.category_id}`, {})
+    .then(res => res.data)
+    .then(data => data.path_from_root.map(categoria => categoria.name))
+    .catch(err => console.log(err));
 
-      const resObj = {
-          author : {
-              name: 'Aldana',
-              lastname: 'Longhi',
-          },
-          item: {
-              id: detallesItem.id,
-              title: detallesItem.title,
-              price: {
-                  currency: detallesItem.currency_id,
-                  ammount: detallesItem.price,
-              },
-              picture: detallesItem.thumbnail,
-              condition: detallesItem.condition,
-              free_shipping: detallesItem.shipping.tags.find(el => el === 'mandatory_free_shipping') ? true : false,
-              sold_quantity: detallesItem.sold_quantity,
-              description: descripcionItem,
-              categories: categoryItem,
-          }
-      }
-      console.log(resObj);
+  const resObj = {
+    author: {
+      name: 'Aldana',
+      lastname: 'Longhi',
+    },
+    item: {
+      id: detallesItem.id,
+      title: detallesItem.title,
+      price: {
+        currency: detallesItem.currency_id,
+        ammount: detallesItem.price,
+      },
+      picture: detallesItem.thumbnail,
+      condition: detallesItem.condition,
+      free_shipping: !!detallesItem.shipping.tags.find(el => el === 'mandatory_free_shipping'),
+      sold_quantity: detallesItem.sold_quantity,
+      description: descripcionItem,
+      categories: categoryItem,
+    },
+  };
 
-    res.json(resObj);
+  res.json(resObj);
 };
