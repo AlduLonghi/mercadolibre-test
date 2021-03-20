@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AlduLonghi/mercadolibre-test/issues"
   },
-  "homepage": "https://github.com/AlduLonghi/mercadolibre-test#readme"
+  "homepage": "https://github.com/AlduLonghi/mercadolibre-test#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
