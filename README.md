@@ -22,6 +22,8 @@ Tener Node instalado en tu computadora.
 
 - Correr los siguientes comandos:
 
+### Para su configuración:
+
  `git clone https://github.com/AlduLonghi/mercadolibre-test.git`
 
  `cd mercadolibre-test`
@@ -33,8 +35,8 @@ Tener Node instalado en tu computadora.
  `cd frontend`
 
  `npm install`
-
- `cd ..`
+ 
+ ### Para su uso:
 
  `npm start`
 
