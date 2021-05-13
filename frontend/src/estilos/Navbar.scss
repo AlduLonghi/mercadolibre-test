@@ -1,0 +1,47 @@
+$gris-oscuro: #333;
+$gris: #9999;
+
+nav {
+  display: flex;
+  max-width: 1024px;
+  margin: auto;
+
+  a {
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+
+  input {
+    height: 100%;
+    width: 95%;
+    border: none;
+    border-radius: 2px 0 0 2px;
+    padding: 0 1rem;
+    font-size: 18px;
+    color: $gris-oscuro;
+
+    :focus {
+      outline: 0;
+    }
+  }
+
+  button {
+    height: 100%;
+    width: 5%;
+    border: none;
+    border-radius: 0 2px 2px 0;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+}

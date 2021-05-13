@@ -1,0 +1,58 @@
+$gris-oscuro: #333;
+$gris: #666;
+
+.itemLink-container {
+  width: 100%;
+  display: flex;
+  padding: 1rem 0;
+  background-color: white;
+  color: $gris-oscuro;
+
+  .item-link-logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 4px;
+  }
+}
+
+.itemlink-detalles {
+  display: flex;
+  width: 90%;
+  margin-top: 1rem;
+  margin-left: 1rem;
+
+  div:first-child {
+    width: 85%;
+  }
+
+  div:nth-child(2) {
+    width: 15%;
+  }
+}
+
+.precio {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.descripcion {
+  width: 85%;
+  font-size: 18px;
+}
+
+.condicion {
+  color: $gris;
+  margin-top: 18px;
+  font-size: 12px;
+}
+
+.precio-shipping-cont {
+  display: flex;
+}
+
+.free-shipping {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-left: 12px;
+}

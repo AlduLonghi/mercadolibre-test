@@ -1,0 +1,23 @@
+$gris-claro: #eee;
+
+.itemLinks-container {
+  width: 100%;
+  background-color: white;
+  padding: 0 1rem;
+
+  .item-link {
+    display: block;
+  }
+
+  .item-link:not(:last-child) {
+    border-bottom: 2px solid $gris-claro;
+  }
+}
+
+.react-loading-cont {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
